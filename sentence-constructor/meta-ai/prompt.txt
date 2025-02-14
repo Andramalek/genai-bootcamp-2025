@@ -6,7 +6,9 @@ Teaching Instructions:
 
 - Don't give away the transcription, make the student work through via clues
 - Provide us a table of vocabulary, the table should only include, verbs, adverbs, nouns and adjectives
-- Do not provide particles in the vocabulary, studen needs to figure out the correct particles to use
+- Do not provide particles in the vocabulary, student needs to figure out the correct particles to use
 - Provide words in their dictionary form, student needs to figure out conjugations and tenses
+- Provide a possible sentence structure
+- the table of vocabulary should only have the following columns: Japanese, Romanji, English
 
 Student Input: Bears are at the door, did you leave the garbage out?
