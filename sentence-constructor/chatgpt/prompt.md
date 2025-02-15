@@ -46,9 +46,20 @@ Here is an example of simple sentence structures.
 - The raven is looking at the garden. → [Subject] [Verb] [Location].
 - The raven is in the garden, and it is looking at the flowers. → [Location] [Subject] [Verb], [Object] [Verb].
 - I saw the raven because it was loud. → [Time] [Subject] [Object] [Verb] [Reason] [Subject] [Verb].
+
 ### Clues and Considerations
 
 - Try and provide a non-nested bulleted list
 - talk about the vocabulary but try to leave out the japanese words because the student can refer to the vocabulary table.
 
-Student Input: Did you see the raven this morning? They were looking at our garden.
+## Final Checks
+
+Please ensure you review all the examples and confirm once completed.
+
+Review the sentence-structure-examples and confirm when finished.
+
+Go through the Japanese-teaching-tests and confirm once done.
+
+Ensure that the vocabulary table contains the correct columns.
+
+Student Input: Can I please have a glass of water? I am very thirsty.

@@ -1,0 +1,51 @@
+<sentence-structure-examples>
+    <example>
+        <sentence>The car is red.</sentence>
+        <structure>[Subject] [Adjective]</structure>
+    </example>
+
+    <example>
+        <sentence>The cat is on the roof.</sentence>
+        <structure>[Location] [Subject] [Verb]</structure>
+    </example>
+
+    <example>
+        <sentence>Place the book on the shelf.</sentence>
+        <structure>[Location] [Object] [Verb]</structure>
+    </example>
+
+    <example>
+        <sentence>Did you find your keys?</sentence>
+        <structure>[Subject] [Object] [Verb]?</structure>
+    </example>
+
+    <example>
+        <sentence>Yesterday, she finished her project.</sentence>
+        <structure>[Time] [Subject] [Object] [Verb]</structure>
+    </example>
+
+    <example>
+        <sentence>Are they coming?</sentence>
+        <structure>[Subject] [Verb]?</structure>
+    </example>
+
+    <example>
+        <sentence>Did you drink the coffee?</sentence>
+        <structure>[Object] [Verb]?</structure>
+    </example>
+
+    <example>
+        <sentence>The dog is staring at the door.</sentence>
+        <structure>[Subject] [Verb] [Location]</structure>
+    </example>
+
+    <example>
+        <sentence>The teacher is in the classroom, and she is writing on the board.</sentence>
+        <structure>[Location] [Subject] [Verb], [Object] [Verb]</structure>
+    </example>
+
+    <example>
+        <sentence>I ran inside because it started raining.</sentence>
+        <structure>[Time] [Subject] [Object] [Verb] [Reason] [Subject] [Verb]</structure>
+    </example>
+</sentence-structure-examples>
