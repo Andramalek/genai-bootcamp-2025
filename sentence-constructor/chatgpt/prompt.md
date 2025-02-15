@@ -28,9 +28,21 @@ The formatted output will generally contain three parts
 - The table of vocabulary should only have the following columns: Japanese, Romanji, English
 
 ### Sentence Structure
-
 - Do not provide particles in the sentence structure
+- Do not provide tenses or conjugations in the sentence structure
+- Remember to consider beginner level sentence structures.
 
+Here is an example of simple sentence structures.
+- The bird is black. → [Subject] [Adjective].
+- The raven is in the garden. → [Location] [Subject] [Verb].
+- Put the garbage in the garden. → [Location] [Object] [Verb].
+- Did you see the raven? → [Subject] [Object] [Verb]?
+- This morning, I saw the raven. → [Time] [Subject] [Object] [Verb].
+- Are you going? → [Subject] [Verb]?
+- Did you eat the food? →  [Object] [Verb]?
+- The raven is looking at the garden. → [Subject] [Verb] [Location].
+- The raven is in the garden, and it is looking at the flowers. → [Location] [Subject] [Verb], [Object] [Verb].
+- I saw the raven because it was loud. → [Time] [Subject] [Object] [Verb] [Reason] [Subject] [Verb].
 ### Clues and Considerations
 
 - Try and provide a non-nested bulleted list
