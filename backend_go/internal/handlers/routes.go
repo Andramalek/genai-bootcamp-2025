@@ -9,6 +9,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/cors"
 
 	"backend_go/internal/service"
 )
@@ -19,6 +20,17 @@ var svc *service.Service
 func RegisterRoutes(router *gin.Engine, serviceInstance *service.Service) {
 	// Add recovery middleware to catch panics and prevent ECONNRESET errors
 	router.Use(gin.Recovery())
+	
+	// Configure CORS
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:5173"}, // Vite default port
+		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+		MaxAge:           12 * 60 * 60, // 12 hours
+	}))
+	
 	svc = serviceInstance
 	api := router.Group("/api")
 	{
