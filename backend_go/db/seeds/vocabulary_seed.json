@@ -1,0 +1,20 @@
+[
+  {
+    "kanji": "食べる",
+    "romaji": "taberu",
+    "english": "to eat",
+    "group": "Basic Verbs"
+  },
+  {
+    "kanji": "見る",
+    "romaji": "miru",
+    "english": "to see",
+    "group": "Basic Verbs"
+  },
+  {
+    "kanji": "払う",
+    "romaji": "harau",
+    "english": "to pay",
+    "group": "Finance"
+  }
+] 
