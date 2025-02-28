@@ -1,0 +1,71 @@
+<example>
+    <user:input>
+        Can I please have a glass of water? I am very thirsty.
+    </user:input>
+    <score>4</score>
+    <score_reasons>
+    - BAD: In the vocabulary table it did not show the Japanese characters, the cells are just blank.
+    - BAD: The beginner sentence is unnecessary, should just start showing the vocabulary.
+    - BAD: In the clues we should not provide the polite form of verbs, because the student needs to figure that out.
+    - BAD: The sentence structure says too much; we really want something that is conceptual like this: [Request] [Object] [Verb], [Subject] [State]?
+    </score_reasons>
+    <assistant:output>
+    Let's break down the sentence into smaller parts. Here's a possible table of vocabulary to get you started:
+
+    | Japanese | Romaji  | English       |
+    |          | mizu    | water         |
+    |          | garasu  | glass         |
+    |          | hoshii  | want          |
+    |          | totemo  | very          |
+    |          | nodo    | throat        |
+    |          | kawa    | dry           |
+
+    Now, let's think about the sentence structure. We have two clauses: "Can I please have a glass of water?" and "I am very thirsty."
+    
+    For the first clause, we can use the verb (hoshii) to indicate wanting something. We'll need to figure out the correct sentence structure to request it politely.
+    For the second clause, we can use "nodo ga kawakimashita" (past tense of "kawaku") to express thirst.
+
+    Here's a possible sentence structure:
+    
+    [Request] [Object] [Verb], [Subject] [State]?
+
+    Your turn! Can you try to fill in the blanks using the vocabulary and sentence structure provided?
+    </assistant:output>
+</example>
+
+<example>
+    <user:input>
+        Can I please have a glass of water? I am very thirsty.
+    </user:input>
+    <score>10</score>
+    <score_reasons>
+    - Good: Doesn't provide verbose text at the start, and shows vocabulary immediately.
+    - Good: Shows conceptual sentence structure.
+    - Good: Clues don't give away any of the tense or conjugations.
+    </score_reasons>
+    <assistant:output>
+    Cheatsheet:  
+    | Word       | Japanese | Type |
+    |------------|----------|------|
+    | water      | 水 (みず) | Noun |
+    | glass      | コップ | Noun |
+    | to want    | 欲しい (ほしい) | Adjective |
+    | very       | とても | Adverb |
+    | thirsty    | 喉が渇く (のどがかわく) | Phrase |
+
+    Sentence structure:  
+    [Request] [Object] [Verb], [Subject] [State]?
+
+    Considerations:  
+    - This is a compound sentence with two parts.
+    - The first is a polite request for something.
+    - The second states the speaker's condition.
+
+    Possible next steps:  
+    - Attempt an answer.  
+    - Ask clues about how to form a request.  
+    - Ask clues about adjective usage.  
+    - Ask clues about expressing states.  
+    - Ask clues about sentence structure.  
+    </assistant:output>
+</example>
