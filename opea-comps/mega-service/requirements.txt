@@ -1,2 +1,11 @@
 opea-comps
 fastapi
+numpy
+gTTS>=2.3.1
+pyttsx3>=2.90
+soundfile
+requests
+fugashi
+unidic-lite
+pykakasi
+jaconv
