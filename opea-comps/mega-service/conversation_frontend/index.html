@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Conversation Partner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #4a6da7 !important;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: white !important;
+        }
+        .container {
+            max-width: 1000px;
+            margin-top: 30px;
+        }
+        .app-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .chat-container {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f8f9fa;
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            position: relative;
+        }
+        .user-message {
+            background-color: #e3f2fd;
+            margin-left: auto;
+            border-top-right-radius: 0;
+        }
+        .agent-message {
+            background-color: #f0f0f0;
+            margin-right: auto;
+            border-top-left-radius: 0;
+        }
+        .feedback-container {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #fff8e1;
+        }
+        .feedback-tabs .nav-link {
+            padding: 5px 10px;
+            font-size: 0.9rem;
+        }
+        .feedback-tabs .nav-link.active {
+            font-weight: bold;
+            background-color: #ffecb3;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .romaji {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .full-transliteration {
+            font-size: 0.9em;
+            color: #2c5282;
+            margin-top: 10px;
+            padding: 6px 10px;
+            background-color: #ebf8ff;
+            border-radius: 4px;
+            border-left: 3px solid #4299e1;
+        }
+        .audio-control {
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .audio-container {
+            margin-top: 8px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            padding: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .audio-container audio {
+            height: 36px;
+        }
+        .error-message {
+            font-size: 0.8em;
+            color: #e53e3e;
+            margin-top: 4px;
+        }
+        .scenario-card {
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .scenario-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .scenario-card.selected {
+            border: 2px solid #4a6da7;
+            background-color: #e3f2fd;
+        }
+        .proficiency-selector {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .proficiency-selector .btn {
+            margin: 0 10px;
+            padding: 8px 20px;
+        }
+        .proficiency-selector .btn.active {
+            background-color: #4a6da7;
+            border-color: #4a6da7;
+        }
+        .btn-record {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn-record.recording {
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .conversation-summary {
+            margin-top: 20px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        #response-suggestion {
+            border-left: 4px solid #17a2b8;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        #suggestion-japanese {
+            font-weight: 500;
+        }
+        #suggestion-transliteration {
+            font-size: 0.95em;
+            background-color: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #dee2e6;
+        }
+        .suggestion-loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .suggestion-loading-spinner {
+            width: 2rem;
+            height: 2rem;
+        }
+        .pulse-animation {
+            animation: pulse-suggestion 2s infinite;
+        }
+        @keyframes pulse-suggestion {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-chat-dots-fill me-2"></i>
+            Japanese Conversation Partner
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="new-conversation-btn">
+                        <i class="bi bi-plus-circle me-1"></i> New Conversation
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="app-container">
+        <!-- Setup View -->
+        <div id="setup-view">
+            <h2 class="text-center mb-4">Start a New Conversation</h2>
+            
+            <h4 class="mb-3">Choose Your Proficiency Level:</h4>
+            <div class="proficiency-selector">
+                <button class="btn btn-outline-primary active" data-proficiency="beginner">
+                    Beginner
+                </button>
+                <button class="btn btn-outline-primary" data-proficiency="intermediate">
+                    Intermediate
+                </button>
+                <button class="btn btn-outline-primary" data-proficiency="advanced">
+                    Advanced
+                </button>
+            </div>
+            
+            <h4 class="mb-3 mt-4">Select a Conversation Scenario:</h4>
+            <div class="row row-cols-1 row-cols-md-2 g-4" id="scenario-cards">
+                <!-- Scenario cards will be dynamically populated -->
+                <div class="col">
+                    <div class="card scenario-card" data-scenario="restaurant">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="bi bi-shop me-2"></i>
+                                Restaurant
+                            </h5>
+                            <p class="card-text">Practice ordering food, asking about menu items, and handling the bill at a restaurant.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card scenario-card" data-scenario="shopping">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="bi bi-bag me-2"></i>
+                                Shopping
+                            </h5>
+                            <p class="card-text">Practice shopping for clothes, asking about sizes, prices, and making purchases.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card scenario-card" data-scenario="directions">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="bi bi-map me-2"></i>
+                                Asking for Directions
+                            </h5>
+                            <p class="card-text">Practice asking for and giving directions to get around in Japan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card scenario-card" data-scenario="interview">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="bi bi-briefcase me-2"></i>
+                                Job Interview
+                            </h5>
+                            <p class="card-text">Practice job interview questions and answers in Japanese.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                <button class="btn btn-primary" id="start-conversation-btn">
+                    <i class="bi bi-chat-left-text me-2"></i>
+                    Start Conversation
+                </button>
+            </div>
+        </div>
+        
+        <!-- Conversation View -->
+        <div id="conversation-view" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 id="scenario-title">Restaurant Conversation</h3>
+                <span class="badge rounded-pill bg-primary" id="proficiency-badge">Beginner</span>
+            </div>
+            
+            <div class="chat-container" id="chat-messages">
+                <!-- Messages will be dynamically added here -->
+            </div>
+            
+            <div class="input-group">
+                <textarea class="form-control" id="user-input" rows="2" placeholder="Type your response in Japanese or English..."></textarea>
+                <button class="btn btn-outline-secondary" type="button" id="speech-btn" title="Speech input">
+                    <i class="bi bi-mic-fill"></i>
+                </button>
+                <button class="btn btn-outline-info" type="button" id="help-btn" title="Get response suggestions">
+                    <i class="bi bi-question-circle-fill"></i> Help
+                </button>
+                <button class="btn btn-primary" type="button" id="send-btn">
+                    <i class="bi bi-send-fill"></i> Send
+                </button>
+            </div>
+            
+            <!-- Response suggestion area (hidden by default) -->
+            <div id="response-suggestion" class="card mb-3" style="display: none;">
+                <div class="card-header bg-info bg-opacity-10">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">
+                            <i class="bi bi-lightbulb-fill text-info me-2"></i>
+                            Suggested Response
+                        </h5>
+                        <button type="button" class="btn-close" id="close-suggestion" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="suggestion-japanese" class="mb-2 fs-5"></div>
+                    <div id="suggestion-transliteration" class="mb-3 text-muted"></div>
+                    <div id="suggestion-audio-container" class="mb-3"></div>
+                    <button class="btn btn-sm btn-success" id="use-suggestion">
+                        <i class="bi bi-check-circle me-1"></i>
+                        Use this response
+                    </button>
+                </div>
+            </div>
+            
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="translation-mode" checked>
+                <label class="form-check-label" for="translation-mode">
+                    Translation Mode (Enter in English, system will translate to Japanese)
+                </label>
+            </div>
+            
+            <div class="feedback-container" id="feedback-container" style="display: none;">
+                <h4 class="mb-3">Feedback on Your Japanese</h4>
+                
+                <ul class="nav nav-tabs feedback-tabs mb-3" id="feedbackTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="grammar-tab" data-bs-toggle="tab" data-bs-target="#grammar" type="button" role="tab">Grammar</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="vocabulary-tab" data-bs-toggle="tab" data-bs-target="#vocabulary" type="button" role="tab">Vocabulary</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="expression-tab" data-bs-toggle="tab" data-bs-target="#expression" type="button" role="tab">Natural Expression</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="overall-tab" data-bs-toggle="tab" data-bs-target="#overall" type="button" role="tab">Overall</button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="feedbackTabContent">
+                    <div class="tab-pane fade show active" id="grammar" role="tabpanel">
+                        <!-- Grammar feedback content -->
+                    </div>
+                    <div class="tab-pane fade" id="vocabulary" role="tabpanel">
+                        <!-- Vocabulary feedback content -->
+                    </div>
+                    <div class="tab-pane fade" id="expression" role="tabpanel">
+                        <!-- Natural expression feedback content -->
+                    </div>
+                    <div class="tab-pane fade" id="overall" role="tabpanel">
+                        <!-- Overall feedback content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Progress Summary - Only shown after conversation ends -->
+    <div class="conversation-summary" id="conversation-summary" style="display: none;">
+        <h3 class="mb-3">Conversation Summary</h3>
+        <div id="summary-content">
+            <!-- Summary will be populated here -->
+        </div>
+    </div>
+</div>
+
+<!-- Recording Modal -->
+<div class="modal fade" id="recordingModal" tabindex="-1" aria-labelledby="recordingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="recordingModalLabel">Record Your Japanese</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="mb-3">
+                    <p class="text-muted">Speak clearly in Japanese after clicking the button below.</p>
+                    <button class="btn btn-lg btn-record" id="record-btn">
+                        <i class="bi bi-mic-fill me-2"></i> Start Recording
+                    </button>
+                </div>
+                <div id="recording-status" class="alert alert-secondary">Click to start recording</div>
+                <div class="mt-3" id="recording-result" style="display: none;">
+                    <div class="audio-preview mb-3"></div>
+                    <h6>Recognized Text:</h6>
+                    <p id="recognized-text" class="p-2 border rounded"></p>
+                    <div id="debug-info" class="debug-panel" style="display: none;">
+                        <div class="small text-muted">Debug information will appear here</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="use-recording" disabled>Use this text</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/static/conversation_app.js?v=20250314_fix_updateUI"></script>
+
+</body>
+</html> 
