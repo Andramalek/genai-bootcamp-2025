@@ -1,0 +1,50 @@
+[
+  {
+    "id": "theme-001",
+    "name": "Food and Drink",
+    "description": "Vocabulary related to food, drinks, eating, and cooking",
+    "words": ["n5-001", "n5-002", "n5-013", "n5-017"]
+  },
+  {
+    "id": "theme-002",
+    "name": "Places and Buildings",
+    "description": "Words for locations, buildings, and parts of a city",
+    "words": ["n5-003", "n5-004", "n5-011"]
+  },
+  {
+    "id": "theme-003",
+    "name": "Transportation",
+    "description": "Words related to travel and transportation methods",
+    "words": ["n5-004", "n5-008", "n5-011", "n5-012"]
+  },
+  {
+    "id": "theme-004",
+    "name": "Daily Life",
+    "description": "Common vocabulary for everyday situations",
+    "words": ["n5-001", "n5-002", "n5-003", "n5-005", "n5-007", "n5-010"]
+  },
+  {
+    "id": "theme-005",
+    "name": "Shopping",
+    "description": "Words related to shopping and commerce",
+    "words": ["n5-009", "n5-014", "n5-015", "n5-016"]
+  },
+  {
+    "id": "theme-006",
+    "name": "Basic Verbs",
+    "description": "Essential verbs for beginners",
+    "words": ["n5-002", "n5-007", "n5-008", "n5-009", "n5-010"]
+  },
+  {
+    "id": "theme-007",
+    "name": "Basic Adjectives",
+    "description": "Essential adjectives for describing things",
+    "words": ["n5-015", "n5-016", "n5-017", "n5-018", "n5-019", "n5-020"]
+  },
+  {
+    "id": "theme-008",
+    "name": "People and Relationships",
+    "description": "Words about people and interpersonal relationships",
+    "words": ["n5-005"]
+  }
+] 

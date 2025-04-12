@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese MUD Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>日本語 MUD</h1>
+            <div class="user-info">
+                <span>{{ username }}</span>
+                <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+            </div>
+        </header>
+        
+        <main>
+            <div class="game-wrapper">
+                <div class="game-display" id="gameOutput">
+                    <!-- Game output will be displayed here -->
+                    <div class="game-welcome">
+                        <p>Connecting to the MUD world...</p>
+                    </div>
+                </div>
+                
+                <div class="game-input">
+                    <form id="commandForm">
+                        <div class="command-wrapper">
+                            <span class="prompt">></span>
+                            <input type="text" id="commandInput" autocomplete="off" autofocus>
+                        </div>
+                        <button type="submit" id="sendButton">Send</button>
+                    </form>
+                </div>
+                
+                <!-- MOVED: Static Command Buttons INSIDE wrapper, AFTER input -->
+                <div class="static-commands">
+                    <button class="cmd-btn" data-command="look">Look</button>
+                    <button class="cmd-btn" data-command="go north">North</button>
+                    <button class="cmd-btn" data-command="go south">South</button>
+                    <button class="cmd-btn" data-command="go east">East</button>
+                    <button class="cmd-btn" data-command="go west">West</button>
+                    <button class="cmd-btn" data-command="inventory">Inventory</button>
+                </div>
+            </div>
+            
+            <div class="game-sidebar">
+                <div class="location-image-container">
+                    <img id="locationImage" src="{{ url_for('static', filename='images/default_location.jpg') }}" alt="Location Image">
+                    <div class="image-caption">Current Location</div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Command Help</h3>
+                    <ul class="command-list">
+                        <li><strong>look</strong> - Look around</li>
+                        <li><strong>go [direction]</strong> - Move</li>
+                        <li><strong>examine [object]</strong> - Look at something</li>
+                        <li><strong>inventory</strong> - Check items</li>
+                        <li><strong>take/drop [item]</strong> - Item actions</li>
+                        <li><strong>talk [npc]</strong> - Talk to NPC</li>
+                        <li><strong>talk [npc] [message]</strong> - Chat with NPC</li>
+                        <li><strong>themes</strong> - List vocabulary themes</li>
+                        <li><strong>theme [name]</strong> - Study theme</li>
+                        <li><strong>learn [word]</strong> - Practice word</li>
+                        <li><strong>help</strong> - Show help</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- ADD LINK TO EXTERNAL SCRIPT -->
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html> 

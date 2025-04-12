@@ -1,0 +1,190 @@
+[
+  {
+    "id": "loc-001",
+    "name": "Entrance to Kyoto",
+    "japanese_name": "京都の入口",
+    "romaji": "Kyōto no iriguchi",
+    "description": "You stand at the entrance to the ancient city of Kyoto. Cherry blossom trees (桜の木, sakura no ki) line the pathway, their delicate pink petals floating on the gentle breeze. The sounds of distant temple bells (お寺の鐘, otera no kane) can be heard in the distance.",
+    "image_prompt": "Entrance gate to ancient Kyoto with cherry blossom trees lining a stone pathway, pink petals floating in the air, traditional Japanese architecture visible in the background",
+    "setting": "city entrance",
+    "is_starting_location": true,
+    "exits": {
+      "north": "loc-002",
+      "east": "loc-003",
+      "west": "loc-006"
+    },
+    "items": ["item-001"],
+    "npcs": ["npc-001"],
+    "vocabulary_id": "n5-001",
+    "cultural_note": "Kyoto was the imperial capital of Japan for over a thousand years and is known for its temples, gardens, and preservation of traditional culture."
+  },
+  {
+    "id": "loc-002",
+    "name": "Traditional Teahouse",
+    "japanese_name": "伝統的な茶室",
+    "romaji": "Dentōtekina chashitsu",
+    "description": "A cozy traditional teahouse with tatami mats (畳, tatami) covering the floor. The aroma of freshly brewed green tea (お茶, ocha) fills the air. An elderly woman carefully prepares tea behind a low wooden counter.",
+    "image_prompt": "Interior of a traditional Japanese teahouse with tatami mat floors, wooden beams, and an elderly woman preparing matcha tea behind a low counter, sunlight streaming through paper windows",
+    "setting": "teahouse",
+    "exits": {
+      "south": "loc-001",
+      "west": "loc-004",
+      "north": "loc-008"
+    },
+    "items": ["item-002"],
+    "npcs": ["npc-002"],
+    "vocabulary_id": "n5-002",
+    "cultural_note": "The Japanese tea ceremony (茶道, sadō) is a cultural activity involving the ceremonial preparation and presentation of matcha, powdered green tea."
+  },
+  {
+    "id": "loc-003",
+    "name": "Riverside Garden",
+    "japanese_name": "川沿いの庭",
+    "romaji": "Kawayoi no niwa",
+    "description": "A serene garden next to a flowing river (川, kawa). Stone paths wind between carefully pruned bonsai trees (盆栽, bonsai) and colorful flower beds. A small wooden bridge (橋, hashi) arches over a narrow section of the river.",
+    "image_prompt": "Peaceful Japanese garden beside a flowing river with stone paths, manicured bonsai trees, colorful flower beds, and a small wooden arched bridge over the water",
+    "setting": "garden",
+    "exits": {
+      "west": "loc-001",
+      "north": "loc-005",
+      "east": "loc-007"
+    },
+    "items": ["item-003"],
+    "npcs": [],
+    "vocabulary_id": "n5-003",
+    "cultural_note": "Japanese gardens are designed with careful attention to balance and harmony, often incorporating water features, stones, and carefully shaped plants."
+  },
+  {
+    "id": "loc-004",
+    "name": "Local School",
+    "japanese_name": "地元の学校",
+    "romaji": "Jimoto no gakkō",
+    "description": "A modern school building with students (学生, gakusei) in uniforms coming and going. The school yard has a few cherry blossom trees and benches where students gather to chat and study (勉強する, benkyō suru).",
+    "image_prompt": "Modern Japanese school building with uniformed students in the courtyard, cherry blossom trees providing shade, and benches where students sit studying and chatting",
+    "setting": "school",
+    "exits": {
+      "east": "loc-002",
+      "south": "loc-010"
+    },
+    "items": ["item-004"],
+    "npcs": ["npc-003"],
+    "vocabulary_id": "n5-004",
+    "cultural_note": "Education is highly valued in Japan, and students typically wear uniforms and participate in after-school clubs called 'bukatsu'."
+  },
+  {
+    "id": "loc-005",
+    "name": "Community Center",
+    "japanese_name": "コミュニティセンター",
+    "romaji": "Komyuniti sentā",
+    "description": "A busy community center where locals gather for various activities. There are tables where people (人々, hitobito) play traditional games, and a bulletin board covered with community announcements (お知らせ, oshirase).",
+    "image_prompt": "Interior of a Japanese community center with locals of various ages gathered at tables playing traditional games like Go and Shogi, bulletin boards with notices, and bright natural lighting",
+    "setting": "community center",
+    "exits": {
+      "south": "loc-003",
+      "east": "loc-009"
+    },
+    "items": ["item-005"],
+    "npcs": ["npc-004"],
+    "vocabulary_id": "n5-005",
+    "cultural_note": "Community centers in Japan often offer cultural classes, language exchange events, and serve as gathering places for local residents of all ages."
+  },
+  {
+    "id": "loc-006",
+    "name": "Kyoto Station",
+    "japanese_name": "京都駅",
+    "romaji": "Kyōto-eki",
+    "description": "The bustling main train station of Kyoto. Electronic signs display departure times for various trains (電車, densha). Travelers with suitcases hurry across the polished floor. There are several shops and food stalls inside the station complex.",
+    "image_prompt": "Modern interior of Kyoto Station with high glass ceilings, electronic departure boards, travelers with luggage, and a mix of traditional and modern architectural elements",
+    "setting": "train station",
+    "exits": {
+      "east": "loc-001",
+      "north": "loc-011"
+    },
+    "items": ["item-007"],
+    "npcs": [],
+    "vocabulary_id": "n5-012",
+    "cultural_note": "Japanese train stations are typically extremely punctual, clean, and feature a variety of shops and restaurants. The shinkansen (bullet train) is famous for its speed and reliability."
+  },
+  {
+    "id": "loc-007",
+    "name": "Fushimi Inari Shrine",
+    "japanese_name": "伏見稲荷大社",
+    "romaji": "Fushimi Inari Taisha",
+    "description": "A famous Shinto shrine dedicated to Inari, the kami of foxes and rice. Thousands of vibrant orange torii gates (鳥居, torii) form tunnels along the pathways. Stone fox statues (狐, kitsune) guard the shrine buildings, each holding a symbolic item in its mouth.",
+    "image_prompt": "Pathway with rows of vibrant orange torii gates creating a tunnel at Fushimi Inari Shrine, stone fox statues guarding the entrance, traditional shrine buildings visible in the background",
+    "setting": "shrine",
+    "exits": {
+      "west": "loc-003"
+    },
+    "items": [],
+    "npcs": [],
+    "vocabulary_id": "n5-018",
+    "cultural_note": "Fushimi Inari is famous for its thousands of torii gates, which are donated by businesses praying for prosperity. Inari is believed to be the patron of business, and foxes are considered its messengers."
+  },
+  {
+    "id": "loc-008",
+    "name": "Traditional Restaurant",
+    "japanese_name": "和食レストラン",
+    "romaji": "Washoku resutoran",
+    "description": "A cozy restaurant serving traditional Japanese cuisine. The delicious smell of various dishes (料理, ryōri) fills the air. Customers sit on zabuton cushions at low tables, enjoying their meals. A chef works diligently behind the counter, preparing food with expert precision.",
+    "image_prompt": "Warm interior of a traditional Japanese restaurant with low tables and zabuton cushions, diners enjoying authentic Japanese cuisine, a chef preparing sushi and other dishes behind a wooden counter",
+    "setting": "restaurant",
+    "exits": {
+      "south": "loc-002"
+    },
+    "items": [],
+    "npcs": [],
+    "vocabulary_id": "n5-013",
+    "cultural_note": "Traditional Japanese cuisine, known as 'washoku', has been recognized by UNESCO as an Intangible Cultural Heritage. It emphasizes seasonal ingredients, meticulous preparation, and beautiful presentation."
+  },
+  {
+    "id": "loc-009",
+    "name": "Public Library",
+    "japanese_name": "公立図書館",
+    "romaji": "Kōritsu toshokan",
+    "description": "A quiet library with rows of bookshelves containing books (本, hon) in both Japanese and English. Students and adults sit at tables, reading and studying. The library has a dedicated area for Japanese language learning resources with dictionaries and textbooks.",
+    "image_prompt": "Interior of a Japanese public library with wooden bookshelves filled with books, students and adults reading at tables, soft lighting, and a special section for language learning resources",
+    "setting": "library",
+    "exits": {
+      "west": "loc-005"
+    },
+    "items": ["item-006"],
+    "npcs": [],
+    "vocabulary_id": "n5-006",
+    "cultural_note": "Japanese libraries often have strict rules about silence and organization. Many people use libraries as study spaces, especially students preparing for examinations."
+  },
+  {
+    "id": "loc-010",
+    "name": "Shopping District",
+    "japanese_name": "商店街",
+    "romaji": "Shōtengai",
+    "description": "A bustling street lined with various shops and stores (店, mise). Colorful signs advertise clothing, electronics, and souvenirs. Shop owners occasionally call out to passersby, promoting their goods. The atmosphere is lively with shoppers examining merchandise and bargaining with merchants.",
+    "image_prompt": "Vibrant covered shopping arcade in Japan with narrow pathways, colorful storefronts with Japanese signage, shop owners greeting customers, and locals browsing merchandise under bright lights",
+    "setting": "shopping area",
+    "exits": {
+      "north": "loc-004",
+      "east": "loc-011"
+    },
+    "items": [],
+    "npcs": ["npc-005"],
+    "vocabulary_id": "n5-014",
+    "cultural_note": "Shopping districts called 'shōtengai' are common in Japanese cities and towns. These are often covered arcades with many small, specialized shops rather than large department stores."
+  },
+  {
+    "id": "loc-011",
+    "name": "Residential Neighborhood",
+    "japanese_name": "住宅街",
+    "romaji": "Jūtakugai",
+    "description": "A quiet neighborhood with a mix of traditional and modern Japanese houses (家, ie). Small gardens decorate the fronts of some homes. A vending machine stands at the corner of the street, offering various drinks. The neighborhood has a peaceful, lived-in atmosphere.",
+    "image_prompt": "Quiet Japanese residential street with a mix of traditional wooden houses and modern homes, small gardens with plants and stone lanterns, and a colorful vending machine at the street corner",
+    "setting": "residential area",
+    "exits": {
+      "south": "loc-006",
+      "west": "loc-010"
+    },
+    "items": [],
+    "npcs": [],
+    "vocabulary_id": "n5-003",
+    "cultural_note": "Japanese residential areas often feature a mix of housing styles, from traditional wooden houses to modern apartments. Vending machines are ubiquitous, even in residential neighborhoods."
+  }
+] 

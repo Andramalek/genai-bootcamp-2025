@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese MUD - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>日本語 MUD</h1>
+            <h2>A Japanese Language Learning Adventure</h2>
+        </div>
+        
+        <form class="login-form" action="{{ url_for('login') }}" method="post">
+            <div class="form-group">
+                <label for="username">Your Name:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="jlpt_level">Your Japanese Level:</label>
+                <select id="jlpt_level" name="jlpt_level">
+                    <option value="N5">N5 (Beginner)</option>
+                    <option value="N4">N4 (Basic)</option>
+                    <option value="N3">N3 (Intermediate)</option>
+                    <option value="N2">N2 (Advanced)</option>
+                    <option value="N1">N1 (Native-like)</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="login-button">Start Adventure</button>
+        </form>
+        
+        <div class="login-info">
+            <h3>About This Game</h3>
+            <p>Explore virtual Japanese cities and locations while learning vocabulary, grammar, and cultural information through interactive conversations with AI-powered NPCs.</p>
+            <p>The game will adapt the language difficulty based on your selected JLPT level.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Japanese MUD - A Language Learning Project</p>
+    </footer>
+</body>
+</html> 

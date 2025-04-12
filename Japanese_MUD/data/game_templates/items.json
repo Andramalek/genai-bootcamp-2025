@@ -1,0 +1,100 @@
+[
+  {
+    "id": "item-001",
+    "name": "Guide Book",
+    "japanese_name": "案内書",
+    "romaji": "annaisho",
+    "description": "A guide book introducing basic Japanese phrases and customs.",
+    "vocabulary_id": "n5-006",
+    "is_takeable": true,
+    "properties": {
+      "weight": 1,
+      "value": 100,
+      "provides_bonus": "basic_phrases"
+    }
+  },
+  {
+    "id": "item-002",
+    "name": "Tea Cup",
+    "japanese_name": "お茶碗",
+    "romaji": "ochawan",
+    "description": "A traditional Japanese tea cup with delicate blue patterns.",
+    "vocabulary_id": "n5-007",
+    "is_takeable": true,
+    "properties": {
+      "weight": 0.5,
+      "value": 200,
+      "fragile": true
+    }
+  },
+  {
+    "id": "item-003",
+    "name": "Garden Map",
+    "japanese_name": "庭園図",
+    "romaji": "teien-zu",
+    "description": "A map of the garden showing various plants and their Japanese names.",
+    "vocabulary_id": "n5-008",
+    "is_takeable": true,
+    "properties": {
+      "weight": 0.2,
+      "value": 50,
+      "provides_bonus": "nature_vocabulary"
+    }
+  },
+  {
+    "id": "item-004",
+    "name": "Study Notebook",
+    "japanese_name": "勉強ノート",
+    "romaji": "benkyō nōto",
+    "description": "A notebook filled with Japanese study notes and vocabulary lists.",
+    "vocabulary_id": "n5-009",
+    "is_takeable": true,
+    "properties": {
+      "weight": 0.7,
+      "value": 150,
+      "provides_bonus": "vocabulary_retention"
+    }
+  },
+  {
+    "id": "item-005",
+    "name": "Practice Cards",
+    "japanese_name": "練習カード",
+    "romaji": "renshū kādo",
+    "description": "A set of flashcards for practicing basic Japanese words.",
+    "vocabulary_id": "n5-010",
+    "is_takeable": true,
+    "properties": {
+      "weight": 0.3,
+      "value": 75,
+      "provides_bonus": "quick_review"
+    }
+  },
+  {
+    "id": "item-006",
+    "name": "Bus Ticket",
+    "japanese_name": "バス切符",
+    "romaji": "basu kippu",
+    "description": "A ticket for the local bus with Japanese instructions.",
+    "vocabulary_id": "n5-011",
+    "is_takeable": true,
+    "properties": {
+      "weight": 0.1,
+      "value": 30,
+      "consumable": true
+    }
+  },
+  {
+    "id": "item-007",
+    "name": "Train Schedule",
+    "japanese_name": "電車の時刻表",
+    "romaji": "densha no jikokuhyō",
+    "description": "A schedule of train departures and arrivals with station names in Japanese.",
+    "vocabulary_id": "n5-012",
+    "is_takeable": true,
+    "properties": {
+      "weight": 0.2,
+      "value": 40,
+      "provides_bonus": "transportation_vocabulary"
+    }
+  }
+] 

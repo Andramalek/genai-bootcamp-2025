@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "name": "Python Style",
+      "description": "Follow PEP 8 and project conventions",
+      "patterns": [
+        "Use 4 spaces for indentation",
+        "Maximum line length of 88 characters",
+        "Use snake_case for variables and functions",
+        "Use PascalCase for classes",
+        "Use UPPERCASE for constants"
+      ]
+    },
+    {
+      "name": "Japanese Text Handling",
+      "description": "Rules for handling Japanese language content",
+      "patterns": [
+        "Always use UTF-8 encoding for files with Japanese text",
+        "Include both Japanese characters and romaji in vocabulary data",
+        "Comment any regex patterns used for Japanese text matching"
+      ]
+    },
+    {
+      "name": "Documentation",
+      "description": "Documentation requirements",
+      "patterns": [
+        "All functions must have docstrings",
+        "Include type hints for function parameters and return values",
+        "Document any AI prompts with examples"
+      ]
+    },
+    {
+      "name": "Testing",
+      "description": "Testing guidelines",
+      "patterns": [
+        "Write unit tests for all model classes",
+        "Mock external API calls in tests",
+        "Include test cases for Japanese text processing"
+      ]
+    },
+    {
+      "name": "API Integration",
+      "description": "Rules for external API usage",
+      "patterns": [
+        "Use environment variables for all API keys",
+        "Implement proper error handling for all API requests",
+        "Include request retry logic with exponential backoff"
+      ]
+    }
+  ]
+}

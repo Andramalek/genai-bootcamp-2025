@@ -1,0 +1,87 @@
+[
+  {
+    "id": "npc-001",
+    "name": "Tanaka-san",
+    "japanese_name": "田中さん",
+    "romaji": "Tanaka-san",
+    "description": "A friendly elderly man wearing a traditional kimono. He smiles warmly and offers to help visitors.",
+    "vocabulary_id": "n5-013",
+    "dialog": {
+      "greeting": "こんにちは！(Konnichiwa!) Welcome to Kyoto. How can I help you today?",
+      "hint": "If you're new here, I recommend visiting the teahouse to the north. The owner can teach you about traditional Japanese customs.",
+      "learn": "Let me teach you a useful phrase: 'ありがとう' (arigatou) means 'thank you' in Japanese."
+    },
+    "properties": {
+      "role": "guide",
+      "knowledge": ["local_history", "basic_phrases"]
+    }
+  },
+  {
+    "id": "npc-002",
+    "name": "Yamada-san",
+    "japanese_name": "山田さん",
+    "romaji": "Yamada-san",
+    "description": "An elderly woman with gray hair tied in a bun. She moves gracefully as she prepares tea.",
+    "vocabulary_id": "n5-014",
+    "dialog": {
+      "greeting": "いらっしゃいませ (Irasshaimase). Welcome to my humble teahouse.",
+      "hint": "Tea ceremony is an important part of Japanese culture. We call it 'お茶の作法' (ocha no sahō).",
+      "learn": "In formal situations, we say 'よろしくお願いします' (yoroshiku onegaishimasu) when meeting someone, which roughly means 'please treat me well'."
+    },
+    "properties": {
+      "role": "tea_master",
+      "knowledge": ["tea_ceremony", "formal_language"]
+    }
+  },
+  {
+    "id": "npc-003",
+    "name": "Suzuki-sensei",
+    "japanese_name": "鈴木先生",
+    "romaji": "Suzuki-sensei",
+    "description": "A middle-aged teacher with glasses and a friendly smile. She carries several textbooks.",
+    "vocabulary_id": "n5-015",
+    "dialog": {
+      "greeting": "こんにちは、生徒さん (Konnichiwa, seito-san). Hello, student!",
+      "hint": "Learning requires practice! Try using new words in sentences.",
+      "learn": "Here's a useful phrase for students: '分かりません' (wakarimasen) means 'I don't understand'."
+    },
+    "properties": {
+      "role": "teacher",
+      "knowledge": ["grammar", "vocabulary", "learning_methods"]
+    }
+  },
+  {
+    "id": "npc-004",
+    "name": "Sato-san",
+    "japanese_name": "佐藤さん",
+    "romaji": "Sato-san",
+    "description": "A cheerful young woman organizing activities at the community center. She wears modern clothes with traditional elements.",
+    "vocabulary_id": "n5-016",
+    "dialog": {
+      "greeting": "やあ！(Yaa!) Hi there! Welcome to our community center.",
+      "hint": "We have language exchange meetings every week. It's a great way to practice!",
+      "learn": "Young people often use casual language like 'すごい' (sugoi) which means 'amazing' or 'awesome'."
+    },
+    "properties": {
+      "role": "community_organizer",
+      "knowledge": ["modern_slang", "community_events"]
+    }
+  },
+  {
+    "id": "npc-005",
+    "name": "Nakamura-san",
+    "japanese_name": "中村さん",
+    "romaji": "Nakamura-san",
+    "description": "A local shopkeeper with a friendly demeanor. His small shop sells various traditional and modern items.",
+    "vocabulary_id": "n5-017",
+    "dialog": {
+      "greeting": "いらっしゃい (Irasshai)! Welcome to my shop!",
+      "hint": "Shopping in Japan often involves learning specific phrases. Try asking 'いくらですか' (Ikura desu ka?) which means 'How much is it?'",
+      "learn": "When you want to buy something, you can say 'これをください' (Kore wo kudasai) which means 'Please give me this.'"
+    },
+    "properties": {
+      "role": "shopkeeper",
+      "knowledge": ["shopping_phrases", "merchandise"]
+    }
+  }
+] 
